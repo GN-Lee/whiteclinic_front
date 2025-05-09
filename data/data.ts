@@ -1,0 +1,77 @@
+export const data = () => {
+  const info = [
+    {
+      id: 1,
+      item: "세탁기",
+      name: "김민규",
+      rider: "장효환",
+      time: "오전9시",
+      date: "2024.09.04",
+      phone: "010-1234-5678",
+      address: "부산시 서구",
+      price: "80,000원",
+      manager: "수정하기",
+    },
+    {
+      id: 2,
+      item: "에어컨",
+      name: "이지헌",
+      rider: "이광녕",
+      time: "오전10시",
+      date: "2024.09.07",
+      phone: "010-1234-5678",
+      address: "부산시 서구",
+      price: "100,000원",
+      manager: "수정하기",
+    },
+    {
+      id: 3,
+      item: "세탁기",
+      name: "이현배",
+      rider: "장효환",
+      time: "오전11시",
+      date: "2024.09.08",
+      phone: "010-1234-5678",
+      address: "부산시 서구",
+      price: "120,000원",
+      manager: "수정하기",
+    },
+    {
+      id: 4,
+      item: "세탁기",
+      name: "이현배",
+      rider: "장효환",
+      time: "오전12시",
+      date: "2024.09.09",
+      phone: "010-1234-5678",
+      address: "부산시 서구",
+      price: "140,000원",
+      manager: "수정하기",
+    },
+  ];
+  return info;
+};
+
+export const riderList = () => {
+  const rider = [
+    {
+      id: 1,
+      name: "장효환",
+      age: 30,
+      phone: "010-1234-5678",
+      address: "부산시 서구",
+      email: "gygnbhks123@gmail.com",
+      benefit: 40,
+    },
+    {
+      id: 2,
+      name: "이광녕",
+      age: 30,
+      phone: "010-1234-5678",
+      address: "인천시 중구",
+      email: "gygnbhks123@gmail.com",
+      benefit: 50,
+    },
+  ];
+  return rider;
+};
