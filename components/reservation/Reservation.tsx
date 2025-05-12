@@ -1,14 +1,28 @@
-import { data } from "../../data/data";
-import { ReservationList } from "../../types/types";
+import { data, riderList } from "../../data/data";
+import { ReservationList, RiderInfoList } from "../../types/types";
 
 export const Reservation = () => {
   const reservationList: ReservationList = data();
+  // const RiderList: RiderInfoList = riderList();
 
   return (
     <div className="flex flex-col gap-4 bg-white p-4 rounded-lg">
       <h1 className="flex justify-center text-2xl font-bold bg-gradient-to-r from-blue-700 to-white bg-clip-text text-transparent">
         예약 목록
       </h1>
+      <div className="flex justify-between items-center gap-2 mb-4">
+        <div className="flex gap-2">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
+            진행중인 예약
+          </button>
+          <button className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-colors">
+            완료된 예약
+          </button>
+        </div>
+        <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors">
+          예약 생성하기
+        </button>
+      </div>
       {reservationList.map((reservation) => (
         <div
           key={reservation.id}
@@ -28,12 +42,6 @@ export const Reservation = () => {
               <div className="flex items-center space-x-2">
                 <span className="text-gray-600">
                   고객명: {reservation.name}
-                </span>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <span className="text-gray-600">
-                  담당기사: {reservation.rider}
                 </span>
               </div>
 
@@ -66,8 +74,8 @@ export const Reservation = () => {
               <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center">
                 <span>상세정보</span>
               </button>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center">
-                <span>수정하기</span>
+              <button className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors flex items-center">
+                <span>예약 수정하기</span>
               </button>
             </div>
           </div>
