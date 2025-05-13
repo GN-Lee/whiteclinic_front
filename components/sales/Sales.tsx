@@ -2,7 +2,7 @@
 import { VictoryBar, VictoryChart, VictoryTheme } from "victory";
 
 export const Sales = () => {
-  const salesData = [
+  const dailySalesData = [
     { x: "월요일", y: 10 },
     { x: "화요일", y: 50 },
     { x: "수요일", y: 30 },
@@ -19,7 +19,10 @@ export const Sales = () => {
   ];
 
   return (
-    <div className="flex w-full max-w-screen-xl mx-auto flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
+    <div
+      id="sales"
+      className="flex w-full max-w-screen-xl mx-auto flex-col gap-4 bg-white p-6 rounded-lg shadow-lg"
+    >
       <h1 className="text-5xl font-bold text-center text-blue-600 mb-4">
         매출 현황
       </h1>
@@ -46,7 +49,7 @@ export const Sales = () => {
         width={500}
         height={250}
       >
-        <VictoryBar animate={{ duration: 1000 }} data={salesData} />
+        <VictoryBar animate={{ duration: 1000 }} data={dailySalesData} />
       </VictoryChart>
 
       <h1 className="text-5xl font-bold text-center bg-gradient-to-r from-blue-600 to-blue-200 bg-clip-text text-transparent mb-4">

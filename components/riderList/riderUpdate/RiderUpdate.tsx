@@ -1,6 +1,9 @@
 export const RiderUpdate = () => {
   return (
-    <div className="flex flex-col gap-4 bg-white p-8 rounded-lg text-black shadow-lg max-w-2xl mx-auto">
+    <div
+      id="update"
+      className="flex flex-col gap-4 bg-white p-8 rounded-lg text-black shadow-lg max-w-2xl mx-auto"
+    >
       <h1 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
         기사 정보 수정
       </h1>
@@ -16,13 +19,13 @@ export const RiderUpdate = () => {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="age" className="text-gray-700 font-semibold">
-            나이
+          <label htmlFor="date" className="text-gray-700 font-semibold">
+            생년월일
           </label>
           <input
-            type="number"
-            id="age"
-            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="date"
+            id="date"
+            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           />
         </div>
         <div className="flex flex-col gap-2">

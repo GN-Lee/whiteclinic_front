@@ -75,3 +75,28 @@ export const riderList = () => {
   ];
   return rider;
 };
+
+export const verificationPending = () => {
+  const status = ["인증 대기중", "인증 완료", "인증 실패"];
+  const verification = [
+    {
+      id: 1,
+      name: "장효환",
+      email: "gygnbhks123@gmail.com",
+      phone: "010-1234-5678",
+      address: "부산시 서구",
+      benefit: 40,
+      status: status[0],
+    },
+    {
+      id: 2,
+      name: "이광녕",
+      email: "gygnbhks123@gmail.com",
+      phone: "010-1234-5678",
+      address: "인천시 중구",
+      benefit: 50,
+      status: status[1],
+    },
+  ];
+  return verification;
+};
