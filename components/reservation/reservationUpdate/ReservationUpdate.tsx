@@ -1,9 +1,6 @@
 export const ReservationUpdate = () => {
   return (
-    <div
-      id="update"
-      className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg"
-    >
+    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold text-center mb-8 text-blue-600">
         예약 수정하기
       </h1>
@@ -135,7 +132,7 @@ export const ReservationUpdate = () => {
           type="submit"
           className="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition-colors font-semibold mt-4"
         >
-          예약 생성하기
+          예약 수정
         </button>
       </form>
     </div>

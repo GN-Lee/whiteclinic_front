@@ -4,7 +4,7 @@ export const ProcessRev = () => {
   const reservationList = data();
 
   return (
-    <div id="process" className="bg-white p-4 rounded-lg">
+    <div className="bg-white p-4 rounded-lg">
       <h1 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
         진행중인 예약건
       </h1>

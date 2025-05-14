@@ -3,7 +3,7 @@ import { data } from "@/data/data";
 export const ExpiredRev = () => {
   const reservationList = data();
   return (
-    <div id="expired" className="bg-white p-4 rounded-lg">
+    <div className="bg-white p-4 rounded-lg">
       <h1 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent">
         완료된 예약
       </h1>

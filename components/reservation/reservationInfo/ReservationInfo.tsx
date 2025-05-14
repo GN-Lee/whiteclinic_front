@@ -1,15 +1,11 @@
 "use client";
-import { Reservation } from "@/types/types";
 import { data } from "@/data/data";
 
 export const ReservationInfo = () => {
   const reservationData = data()[0]; // 첫 번째 예약 데이터를 가져옴
 
   return (
-    <div
-      id="detail"
-      className="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-auto"
-    >
+    <div className="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold text-center mb-8 bg-gradient-to-r from-blue-700 to-blue-400 bg-clip-text text-transparent">
         예약 상세 정보
       </h1>
@@ -24,10 +20,7 @@ export const ReservationInfo = () => {
               <span className="font-medium mr-2">수리 물품:</span>{" "}
               {reservationData.item}
             </p>
-            <p className="flex items-center text-gray-700">
-              <span className="font-medium mr-2">담당 기사:</span>{" "}
-              {reservationData.manager}
-            </p>
+            // 담당기사 fk로 받아올
             <p className="flex items-center text-gray-700">
               <span className="font-medium mr-2">예약 번호:</span>{" "}
               {reservationData.id}

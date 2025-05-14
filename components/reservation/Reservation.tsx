@@ -1,48 +1,58 @@
 "use client";
+import Link from "next/link";
 import { data, riderList } from "../../data/data";
-import { ReservationList, RiderInfoList } from "../../types/types";
 import { useRouter } from "next/navigation";
+import { useReservationStore } from "@/store/reservation/RevState";
 
 export const Reservation = () => {
-  const reservationList: ReservationList = data();
-  // const RiderList: RiderInfoList = riderList();
+  const reservationList = data();
   const router = useRouter();
-
   const handleClick = (path: string) => {
     router.push(path);
   };
 
+  const { currentStatus, setStatus } = useReservationStore();
+
+  const filteredReservations = reservationList.filter(
+    (reservation) => reservation.status === currentStatus
+  );
+
   return (
-    <div
-      id="reservation"
-      className="flex flex-col gap-4 bg-white p-4 rounded-lg"
-    >
+    <div className="flex flex-col gap-4 bg-white p-4">
       <h1 className="flex justify-center text-2xl font-bold bg-gradient-to-r from-blue-700 to-white bg-clip-text text-transparent">
         예약 목록
       </h1>
       <div className="flex justify-between items-center gap-2 mb-4">
         <div className="flex gap-2">
           <button
-            onClick={() => handleClick("/reservation/process")}
             className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+            onClick={() => setStatus("대기")}
           >
-            진행중인 예약
+            대기 예약목록
           </button>
           <button
-            onClick={() => handleClick("/reservation/expired")}
-            className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-colors"
+            className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors"
+            onClick={() => setStatus("진행중")}
           >
-            완료된 예약
+            진행중 예약목록
+          </button>
+          <button
+            className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-colors"
+            onClick={() => setStatus("완료")}
+          >
+            완료 예약목록
           </button>
         </div>
-        <button
-          onClick={() => handleClick("/reservation/enroll")}
+        <Link
+          href="/reservation/enroll"
           className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors"
+          onClick={() => handleClick("/reservation/enroll")}
         >
           예약 생성하기
-        </button>
+        </Link>
       </div>
-      {reservationList.map((reservation) => (
+
+      {filteredReservations.map((reservation) => (
         <div
           key={reservation.id}
           className="border p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
@@ -90,25 +100,19 @@ export const Reservation = () => {
               </div>
             </div>
 
-            {/* {RiderList.map((rider) => (
-              <div key={rider.id}>
-                <span>{rider.name}</span>
-              </div>
-            ))} */}
-
             <div className="flex justify-end gap-2">
-              <button
-                onClick={() => handleClick("/reservation/detail")}
+              <Link
+                href={`/reservation/detail?id=${reservation.id}`}
                 className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center"
               >
                 <span>상세정보</span>
-              </button>
-              <button
-                onClick={() => handleClick("/reservation/update")}
+              </Link>
+              <Link
+                href={`/reservation/update?id=${reservation.id}`}
                 className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors flex items-center"
               >
                 <span>예약 수정하기</span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

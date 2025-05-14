@@ -1,14 +1,4 @@
-"use client";
-import { useRouter } from "next/router";
-
 export const RiderEnroll = () => {
-  const router = useRouter();
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    router.push("/rider/enroll");
-  };
-
   return (
     <div
       id="enroll"
@@ -17,7 +7,7 @@ export const RiderEnroll = () => {
       <h1 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
         기사 등록
       </h1>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form className="space-y-6">
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="text-gray-700 font-semibold">
             이름

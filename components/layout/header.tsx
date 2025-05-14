@@ -8,10 +8,14 @@ export const Header = () => {
   const handleClick = (path: string) => {
     router.push(path);
   };
+
   return (
     <div className="px-4 sm:px-6 lg:px-8 bg-white">
       <div className="flex items-center justify-between h-16 max-w-5xl mx-auto">
-        <div className="flex items-center space-x-4 hover:transform hover:scale-105 transition-transform duration-300 cursor-pointer">
+        <div
+          onClick={() => handleClick("/")}
+          className="flex items-center space-x-4 hover:transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+        >
           <img
             src="/logo.jpg"
             alt="WHITECLINIC Logo"
@@ -32,19 +36,13 @@ export const Header = () => {
             onClick={() => handleClick("/rider")}
             className="bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300"
           >
-            기사정보
+            기사현황
           </button>
           <button
             onClick={() => handleClick("/sales")}
             className="bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300"
           >
-            매출
-          </button>
-          <button
-            onClick={() => handleClick("/verify")}
-            className="bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300"
-          >
-            회원가입 인증 대기
+            매출현황
           </button>
         </div>
       </div>

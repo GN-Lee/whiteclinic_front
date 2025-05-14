@@ -1,9 +1,6 @@
 export const ReservationEnroll = () => {
   return (
-    <div
-      id="enroll"
-      className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg"
-    >
+    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold text-center mb-8 text-blue-600">
         신규 예약 생성
       </h1>
@@ -89,19 +86,6 @@ export const ReservationEnroll = () => {
             id="time"
             className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="manager" className="text-gray-700 font-semibold">
-            담당 기사
-          </label>
-          <select
-            id="manager"
-            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-600"
-          >
-            <option value="">기사님 선택</option>
-            <option value="1">장효환</option>
-            <option value="2">이광녕</option>
-          </select>
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="message" className="text-gray-700 font-semibold">

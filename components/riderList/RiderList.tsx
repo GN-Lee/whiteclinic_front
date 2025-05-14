@@ -1,48 +1,38 @@
 "use client";
-import { riderList } from "@/data/data";
-import { RiderInfoList } from "@/types/types";
-import { useEffect, useMemo, useState } from "react";
+import { useRiderStore } from "@/store/rider/SearchRider";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export const RiderList = () => {
-  const [search, setSearch] = useState("");
-  const [filteredRiders, setFilteredRiders] = useState<RiderInfoList>([]);
   const router = useRouter();
 
-  // riderList()가 매번 새로운 배열을 반환하지 않도록 메모이제이션
-  const riders: RiderInfoList = useMemo(() => riderList(), []);
+  const { search, setSearch, filteredRiders, resetRiders } = useRiderStore();
 
-  useEffect(() => {
-    if (search === "") {
-      setFilteredRiders(riders);
-    } else {
-      const lowerSearch = search.toLowerCase();
-      setFilteredRiders(
-        riders.filter(
-          (rider) =>
-            rider.name.toLowerCase().includes(lowerSearch) ||
-            rider.phone.includes(search)
-        )
-      );
-    }
-  }, [search, riders]);
+  const handleClick = (path: string) => {
+    router.push(path);
+  };
 
   return (
-    <div
-      id="rider"
-      className="flex flex-col gap-4 bg-white p-4 rounded-lg text-black"
-    >
+    <div className="flex flex-col gap-4 bg-white p-4 text-black">
       <h1 className="flex justify-center text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
         기사님 상세정보 & 목록
       </h1>
 
-      <div className="flex justify-end gap-2 mb-4">
-        <button
-          onClick={() => router.push("/rider/enroll")}
+      <div className="flex justify-between gap-2 mb-4">
+        <Link
+          href="/verify"
           className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+          onClick={() => handleClick("/verify")}
+        >
+          회원가입 인증 대기
+        </Link>
+        <Link
+          href="/rider/enroll"
+          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+          onClick={() => handleClick("/rider/enroll")}
         >
           기사 등록
-        </button>
+        </Link>
       </div>
 
       <input
@@ -71,12 +61,13 @@ export const RiderList = () => {
                 </h2>
               </div>
 
-              <button
-                onClick={() => router.push(`/rider/update?id=${rider.id}`)}
+              <Link
+                href={`/rider/update?name=${rider.name}`}
                 className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors"
+                onClick={() => handleClick(`/rider/update?name=${rider.name}`)}
               >
-                정보 수정
-              </button>
+                기사님 정보수정
+              </Link>
             </div>
 
             <div className="grid grid-cols-2 gap-4">

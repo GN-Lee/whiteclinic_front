@@ -7,7 +7,9 @@ export type Reservation = {
   phone: string;
   address: string;
   price: string;
-  manager: string; // 담당 기사[fk]
+  manager: string;
+  completed: boolean;
+  status: string;
 };
 
 export type ReservationList = Reservation[];
@@ -20,6 +22,7 @@ export type Rider = {
   address: string;
   email: string;
   benefit: number;
+  status: string;
 };
 
 export type RiderInfoList = Rider[];

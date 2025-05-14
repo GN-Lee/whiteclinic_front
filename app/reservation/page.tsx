@@ -1,9 +1,12 @@
+import React from "react";
 import { Reservation } from "@/components/reservation/Reservation";
 
-export default function Home() {
+const ReservationPage = () => {
   return (
     <div>
       <Reservation />
     </div>
   );
-}
+};
+
+export default ReservationPage;
