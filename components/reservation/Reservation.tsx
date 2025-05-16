@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { data, riderList } from "../../data/data";
+import { data } from "../../data/data";
 import { useRouter } from "next/navigation";
 import { useReservationStore } from "@/store/reservation/RevState";
 

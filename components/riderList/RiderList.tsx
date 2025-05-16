@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export const RiderList = () => {
   const router = useRouter();
 
-  const { search, setSearch, filteredRiders, resetRiders } = useRiderStore();
+  const { search, setSearch, filteredRiders } = useRiderStore();
 
   const handleClick = (path: string) => {
     router.push(path);
