@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 화이트클리닉 프론트엔드
 
-## Getting Started
+화이트클리닉의 프론트엔드 애플리케이션으로, 예약 및 기사 정보를 관리하는 플랫폼입니다.
 
-First, run the development server:
+## 배포
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+애플리케이션은 Vercel에 배포되어 있으며, [whiteclinic-front-rho.vercel.app](https://whiteclinic-front-rho.vercel.app)에서 접근할 수 있습니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 기능
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **예약 관리**: 예약을 조회, 생성 및 수정할 수 있습니다.
+- **기사 관리**: 기사 정보를 조회 및 수정할 수 있습니다.
+- **매출 개요**: 매출 현황을 확인할 수 있습니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 사용 기술
 
-## Learn More
+- **Next.js**: 서버 사이드 렌더링 및 정적 사이트 생성을 위한 React 프레임워크.
+- **React**: 사용자 인터페이스를 구축하기 위한 JavaScript 라이브러리.
+- **Vercel**: 글로벌 배포 및 서버리스 기능을 제공하는 프론트엔드 개발자 플랫폼.
 
-To learn more about Next.js, take a look at the following resources:
+## 시작하기
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+로컬에서 프로젝트를 실행하려면 다음 단계를 따르세요:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. 리포지토리를 클론합니다:
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/GN-Lee/whiteclinic_front.git
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. 프로젝트 디렉토리로 이동합니다:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   cd whiteclinic_front
+   ```
+
+3. 의존성을 설치합니다:
+
+   ```bash
+   npm install
+   ```
+
+4. 개발 서버를 실행합니다:
+
+   ```bash
+   npm run dev
+   ```
+
+5. 브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인합니다.
+
+## 마치며
+
+프로젝트를 봐주셔서 감사합니다.
